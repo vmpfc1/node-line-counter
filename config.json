@@ -1,0 +1,18 @@
+{
+  "folders": [
+    "!**/node_modules",
+    "!**/_build",
+    "!**/_test",
+    "!**/_doc",
+    "!**/verify",
+    "!gourmet-builder/lib",
+    "!gourmet-server/lib",
+    "!gourmet-runtime/runtime",
+    "!benchmark",
+    "!spec-sketch"
+  ],
+  "files": [
+    "**/*.js",
+    "!**/temp.js"
+  ]
+}
