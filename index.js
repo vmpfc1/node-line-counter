@@ -13,15 +13,13 @@ if (argv["directory"] == undefined) {
 }
 
 if (argv["configuration"] == undefined) {
-  var configLocation = 'config.json';
+  var configLocation = "./config.json";
 } else {
   var configLocation = argv["configuration"];
 }
 
 // Primary function
 function grabInput (input, cb) {
-  fs.readFile(input, /*'utf8',*/ function (err, data) {
-
     // change the names of these variables
     stuff = [];
     moreStuff = [];
@@ -30,13 +28,12 @@ function grabInput (input, cb) {
     //if (err) throw err;  // violates npm style Be very careful never to ever ever throw anything. 
     //It's worse than useless. Just send the error message back as the first argument to the callback.
 
-
-    var jsonFile = JSON.parse(data);
+    var jsonFile = require(input); // require = relative path from this current file (index.js)
+    // previous version, fs.read is from perspective of user in terminal
     var fileArray = stuff.concat(jsonFile["files"], jsonFile["folders"]);
     var onlyExcludeFiles = moreStuff.concat(jsonFile["folders"], "*");
 
     cb(fileArray, onlyExcludeFiles);
-  });
 }
 
 grabInput(configLocation, function(includeFiles, excludeFiles) {
