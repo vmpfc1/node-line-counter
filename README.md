@@ -1,4 +1,6 @@
 # node-line-counter
+Disclaimer: still in production.
+
 A simple command line tool to count the number of lines of code in a given directory. node-line-counter searches recursively and is provided with file types and pathways to use as inclusion/exclusion criteria.
 
 ## installation
