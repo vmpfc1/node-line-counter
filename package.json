@@ -1,6 +1,6 @@
 {
   "name": "node-line-counter",
-  "version": "1.0.15",
+  "version": "1.0.19",
   "description": "Disclaimer: still in production.",
   "main": "index.js",
   "dependencies": {
@@ -8,8 +8,7 @@
     "micromatch": "^2.3.7",
     "minimist": "^1.2.0"
   },
-  "files": ["./index.js", "./config.json"],
-  "bin": { "node-line-counter" : "/bin/index.js" },
+  "bin": { "node-line-counter" : "index.js" },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
