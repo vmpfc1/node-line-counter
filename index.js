@@ -4,13 +4,9 @@ var fs = require("fs");
 var mm = require("micromatch");
 var async = require("async");
 var argv = require("minimist")(process.argv.slice(2));
+var rootLocation = '.';
 
 // Grab default directory and configuration files if user does not give input
-if (argv["directory"] == undefined) {
-  var rootLocation = '.';
-} else {
-  var rootLocation = argv["directory"];
-}
 
 if (argv["configuration"] == undefined) {
   var configLocation = "./config.json";
@@ -123,7 +119,7 @@ grabInput(configLocation, function(includeFiles, excludeFiles) {
 
   scanDir(rootLocation, function() {
     //console.log("done reading directory");
-    console.log("\n" + numLines);
+    console.log("\n" + numLines + " lines");
   });
 });
 
