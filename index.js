@@ -16,16 +16,11 @@ if (argv["configuration"] == undefined) {
 
 // Primary function
 function grabInput (input, cb) {
-    // change the names of these variables
     stuff = [];
     moreStuff = [];
     onlyExcludeFiles = [];
 
-    //if (err) throw err;  // violates npm style Be very careful never to ever ever throw anything. 
-    //It's worse than useless. Just send the error message back as the first argument to the callback.
-
     var jsonFile = require(input); // require = relative path from this current file (index.js)
-    // previous version, fs.read is from perspective of user in terminal
     var fileArray = stuff.concat(jsonFile["files"], jsonFile["folders"]);
     var onlyExcludeFiles = moreStuff.concat(jsonFile["folders"], "*");
 
@@ -94,12 +89,12 @@ grabInput(configLocation, function(includeFiles, excludeFiles) {
         async.each(validFiles, readLines, function() {
           //console.log("done")
           // Once every file is read, itemRead checks each file to see whether its a dir we care about
-          async.each(files, function(item, itemReadCb){
+          async.each(files, function(item, itemReadCb) {
             // itemRead is called after completion of all readLines
             itemRead(path, item, itemReadCb);
           },
           // callback once every file and dir in current path has been read
-          function(){
+          function() {
             //console.log("done reading items at", path)
             if (readFilesCb) readFilesCb()
           })
@@ -110,7 +105,7 @@ grabInput(configLocation, function(includeFiles, excludeFiles) {
     // fs.readdir reads directory, its callback contains array of all files.
     // Then readFiles triggers. When readFiles completes, its cb is ScanDir again.
     fs.readdir(path, function(err, fileArray) {
-      readFiles(err, fileArray, function(){
+      readFiles(err, fileArray, function() {
         //console.log("done reading files in", path)
         scanDirCb()
       })
