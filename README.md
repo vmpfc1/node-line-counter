@@ -12,7 +12,7 @@ npm i node-line-counter -g
 ```
 node-line-counter [configuration]
 ```
-Configuration is a .json file formatted like below, which is the defult:
+Configuration is a .json file formatted like below, which is the default:
 ```
 {
   "folders": [
@@ -50,7 +50,7 @@ $ node-line-counter
 
 ## author
 
-Cameron Smith, Gourmetjs. [cameron@gourmetjs.com](cameron@gourmetjs.com)
+Cameron Smith, Gourmetjs. [vmpfc1@gmail.com](vmpfc1@gmail.com)
 
 ## license
 

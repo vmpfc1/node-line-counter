@@ -1,6 +1,6 @@
 {
   "name": "node-line-counter",
-  "version": "1.0.20",
+  "version": "1.0.22",
   "main": "index.js",
   "dependencies": {
     "async": "^1.5.2",
